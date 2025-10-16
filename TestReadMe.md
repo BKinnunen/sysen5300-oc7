@@ -10,6 +10,6 @@
 Write test code by using three tick marks (` <- next to the tilda)
 
 ```r
-library (dypler)
+library (dyplr)
 print("hello world")
 ```

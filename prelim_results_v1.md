@@ -1,5 +1,5 @@
 ```r
-
+ 
 ### SYSEN 5300: Six Sigma Project Preliminary Results
 ### OC 7 - Six Sigma Warriors
 # Brandy Kinnunen, Juan Rodriguez, Michael Fizdale

@@ -42,7 +42,7 @@ summary(ca_anova_new_clinic)
 ######## Start by defining a function to be used for looping ANOVA tests
 
 #' @name anova_loop
-#' @title ANOVA looping function to evaluate all care types, individually, between clinics
+#' @title ANOVA function to be used with lapply() to evaluate all care types, individually, between clinics
 #' @param data [data frame] is the data frame which will be input to the function
 #' @param care [string] is the care type being evaluated between clinics
 #' @param wait_type [column header] is the type of wait time data evaluated. Either wait_new or wait_established.

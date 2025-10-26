@@ -52,6 +52,8 @@ anova_loop = function(data, care, wait_type){
   
   data <- data %>% filter(type == care)
   data <- droplevels(data)
+
+  # Determine the degrees of freedom (i.e. number of clinics that have valid, non-NA data)
   dof = data %>%
     select(clinic, {{wait_type}}) %>%
     na.omit() %>%

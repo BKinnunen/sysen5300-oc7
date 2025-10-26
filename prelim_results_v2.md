@@ -32,13 +32,12 @@ summary(ca_anova_new_clinic)
 #  Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 # 226 observations deleted due to missingness
 
-### Note, this results show that the ANOVA works and that there is significant variance between clinics
+### Note, these results show that the ANOVA works and that there is significant variance between clinics
 # for all new patient wait times (of all care types). But considering the variability between care types,
 # this does not seem to be helpful. So, I think it is better to do this for each individual care type.
 
 
-## Utilize a loop to run the ANOVA test for each care type, comparing
-# variances between clinics in CA.
+## Utilize a loop to run the ANOVA test for each care type.
 
 ######## Start by defining a function to be used for looping ANOVA tests
 

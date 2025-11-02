@@ -36,3 +36,6 @@ fail_dat <- fail_data(tx_data)
 cost_calc(fail_dat, cost)
 tx_boot <- bootstrap_fn(tx_data, 1000)
 boot_cost(tx_boot,50)
+
+ca_boot <- bootstrap_fn(ca_data, 1000)
+boot_cost(ca_boot,50)

@@ -1,0 +1,36 @@
+### Started the code, but definitely not done yet...
+
+```r
+### SYSEN 5300: Six Sigma Project - Financial Analysis
+### OC 7 - Six Sigma Warriors
+# Brandy Kinnunen, Juan Rodriguez, Michael Fizdale
+
+### Financial Analysis - Utilize the defined project functions to conduct analysis on cost per failure
+
+## (Need SPC functions too??)
+
+library(dplyr)
+library(readr)
+library(tidyverse)
+library(ggplot2)
+#install.packages("patchwork")
+#install.packages("gtable")
+library(patchwork)
+library(viridis)
+library(glue)
+
+source("/cloud/project/six_sigma_project/project_functions.R")
+
+## Read the datasets
+ca_data = read_csv("/cloud/project/six_sigma_project/01_ca_wait_time.csv")
+tx_data = read_csv("/cloud/project/six_sigma_project/03_tx_wait_time.csv")
+pop_data = read_csv("/cloud/project/six_sigma_project/05_vet_pop_5_counties_each_state.csv")
+
+## Define Cost per failure, where 1 failure is each day that the wait time
+# specification limits are violated.
+
+cost = 50  # PLACEHOLDER VALUE --- NEED TO GET AN ACTUAL EST. VALUE!!!
+
+## next steps... utilize functions to continue w/cost analysis....
+
+```

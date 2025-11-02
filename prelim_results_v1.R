@@ -378,6 +378,7 @@ ca_sleep_plot <-ggplot(data = ca_sleep_tot, mapping = aes(x = date, y = wait_new
 ca_sleep_plot
 
 
+
 ### Okay, proof of concept working (sort of?) let's create function that will do this
 # so we can start applying this to other care types and to Texas.
 

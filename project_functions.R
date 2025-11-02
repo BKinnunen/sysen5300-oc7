@@ -544,28 +544,28 @@ bootstrap_fn = function(data, boot_reps){
 #' @param cost [value] is the cost ($) per failure, which is each day over the wait limit
 #' @note: Dependencies: data already bootstrapped; cost_calc()
 
-boot_cost = function(boot_data, cost, pri_lim, spec_lim){
+boot_cost = function(boot_data, cost, pri_lim=20, spec_lim=28){
   
-  n_rep = boot_data %>% summarize(max(rep)) %>% pull()
-  results <- list()
+   n_rep <- sort(unique(boot_data$rep))
+   results <- list(length = length(n_rep))
   
-  for (i in n_rep){
-    # Filter boot data by rep, so that computations are made for each set of rep samples
-    boot_i <- boot_data %>% filter(rep == i)
-    
-    # Cost computation for rep i samples
-    results_i <- cost_calc(data = boot_i, cost = cost, pri_lim = pri_lim, spec_lim = spec_lim) %>%
-      # Add a column to keep track of which rep these results correspond to
-      mutate(rep = i)
-    # Add the results to the list
-    results[[i]] <- results_i
-  }
-  # Bind the rows for the results to create a data frame
-  results_df <- bind_rows(results)
+   for (i in seq_along(n_rep)){
+     # Filter boot data by rep, so that computations are made for each set of rep samples
+     boot_i <- boot_data %>% filter(rep == i)
   
-  ### Use results data frame to determine cost statistics (mean, sd, confidence intervals)
+     # Cost computation for rep i samples
+     results_i <- cost_calc(data = boot_i, cost = cost, pri_lim = pri_lim, spec_lim = spec_lim) %>%
+       # Add a column to keep track of which rep these results correspond to
+       mutate(rep = i)
+     # Add the results to the list
+     results[[i]] <- results_i
+   }
+   # Bind the rows for the results to create a data frame
+   results_df <- bind_rows(results)
+
+  # Use results data frame to determine cost statistics (mean, sd, confidence intervals)
   # for each care type and overall
-  
+
   # Use the total costs for each care type to calculate statistics
   type_stats <- results_df %>%
     group_by(type) %>%

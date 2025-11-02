@@ -32,4 +32,7 @@ cost = 50  # PLACEHOLDER VALUE --- NEED TO GET AN ACTUAL EST. VALUE!!!
 
 ## next steps... utilize functions to continue w/cost analysis....
 
-
+fail_dat <- fail_data(tx_data)
+cost_calc(fail_dat, cost)
+tx_boot <- bootstrap_fn(tx_data, 1000)
+boot_cost(tx_boot,50)

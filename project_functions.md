@@ -20,7 +20,7 @@ fail_plot_double()  ### Create a side-by-side bar plot that visually compares fa
 cost_calc ()        ### Calculate the total cost of failures
 bootstrap_fn()      ### Bootstrap the given data to create a single bootstrapped data frame
 boot_cost()         ### Analyze the bootstrapped data, calculating cost, sample distributions, and CI's
-boot_oveall_distr() ### Plot the bootstrapped cost data in a histogram to visualize overall sample distribution
+boot_overall_distr() ### Plot the bootstrapped cost data in a histogram to visualize overall sample distribution
 boot_type_distr()   ### Plot the bootstrapped data in a histogram to visualize care type distribution
 
 ```
@@ -612,8 +612,8 @@ boot_cost = function(boot_data, cost, pri_lim, spec_lim){
 ################################################################################
 ################################################################################
 
-#' @name boot_oveall_distr
-#' @title Plot the bootstrapped cost data in a histogram to visualize sample distribution
+#' @name boot_overall_distr
+#' @title Plot the bootstrapped cost data in a histogram to visualize overall sample distribution
 #' @param boot_results [data frame] are the bootstrapped cost results
 #' @param state [string] is the two letter state code. Example: "TX", "CA"
 #' @note: Dependencies: data already analyzed by boot_cost()
@@ -667,7 +667,7 @@ boot_overall_distr = function(boot_results, state){
 ################################################################################
 
 #' @name boot_type_distr
-#' @title Plot the bootstrapped data in a histogram to visualize sample distribution
+#' @title Plot the bootstrapped data in a histogram to visualize care type distribution
 #' @param boot_results [data frame] are the bootstrapped cost results
 #' @param care_type [string] is the type of care being evaluated (e.g "AUDIOLOGY")
 #' @param state [string] is the two letter state code. Example: "TX", "CA"

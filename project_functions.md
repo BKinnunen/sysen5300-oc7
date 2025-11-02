@@ -1,5 +1,5 @@
 ## R Functions for Evaluating VA Wait Time Data
-### Associated Datasets: 01_ca_data.csv, 03_tx_data.csv
+### Associated Datasets: 01_ca_wait_time.csv ,   03_tx_wait_time.csv
 ### Code file name is: "project_functions.R"
 ### Saved in a folder called: "six_sigma_project"
 ### Use filepath to call functions: 

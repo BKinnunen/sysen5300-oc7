@@ -35,7 +35,15 @@ cost = 50  # PLACEHOLDER VALUE --- NEED TO GET AN ACTUAL EST. VALUE!!!
 fail_dat <- fail_data(tx_data)
 cost_calc(fail_dat, cost)
 tx_boot <- bootstrap_fn(tx_data, 1000)
-boot_cost(tx_boot,50)
+tx_boot_results <- boot_cost(tx_boot,50)
 
 ca_boot <- bootstrap_fn(ca_data, 1000)
-boot_cost(ca_boot,50)
+ca_boot_results <- boot_cost(ca_boot,50)
+
+boot_overall_distr(tx_boot_results, 'TX') 
+
+tx_boot_results$raw %>% group_by(type) %>% 
+  summarize(total_cost_new= mean(total_cost_new), total_cost_est = mean(total_cost_est), 
+            total_cost_diff = total_cost_new - total_cost_est) %>%  
+  slice_max(order_by = total_cost_new, n=10) 
+tx_boot_results$overall
